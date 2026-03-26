@@ -10,6 +10,29 @@ class ReplayEngine:
         self._dataset_dir = Path(dataset_dir)
         self._max_events = max_events
 
+    def list_scenarios(self) -> List[str]:
+        scenarios: List[str] = []
+        for path in sorted(self._dataset_dir.glob("*.jsonl")):
+            scenarios.append(path.stem)
+        return scenarios
+
+    def scenario_metadata(self, scenario: str) -> Dict[str, str | int]:
+        scenario_file = self._dataset_dir / f"{scenario}.jsonl"
+        if not scenario_file.exists():
+            raise FileNotFoundError(f"Scenario dataset not found: {scenario_file}")
+
+        event_count = 0
+        with open(scenario_file, "r", encoding="utf-8") as handle:
+            for event_count, _ in enumerate(handle, start=1):
+                pass
+
+        return {
+            "scenario": scenario,
+            "dataset_file": str(scenario_file),
+            "event_count": event_count,
+            "max_replay_events": self._max_events,
+        }
+
     def replay(self, scenario: str, audit: AuditLogger, correlation_id: str) -> List[Dict[str, str]]:
         scenario_file = self._dataset_dir / f"{scenario}.jsonl"
         if not scenario_file.exists():
@@ -21,6 +44,12 @@ class ReplayEngine:
                 if idx >= self._max_events:
                     break
                 payload = json.loads(line)
+                if not isinstance(payload, dict):
+                    raise ValueError(f"Replay event must be an object (scenario={scenario}, index={idx})")
+                if "event_type" not in payload:
+                    raise ValueError(
+                        f"Replay event missing event_type (scenario={scenario}, index={idx})"
+                    )
                 payload["correlation_id"] = correlation_id
                 events.append(payload)
                 audit.log(

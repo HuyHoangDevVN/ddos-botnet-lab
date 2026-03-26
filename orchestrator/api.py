@@ -51,6 +51,19 @@ def create_app(config: LabConfig | None = None) -> Flask:
     def list_agents():
         return jsonify(registry.list_status())
 
+    @app.route("/api/scenarios")
+    def list_scenarios():
+        scenario_names = replay_engine.list_scenarios()
+        return jsonify({"scenarios": scenario_names})
+
+    @app.route("/api/scenarios/<scenario_name>")
+    def get_scenario(scenario_name: str):
+        try:
+            metadata = replay_engine.scenario_metadata(scenario_name)
+            return jsonify(metadata)
+        except FileNotFoundError as exc:
+            return jsonify({"status": "error", "error": str(exc)}), 404
+
     @app.route("/api/command", methods=["POST"])
     def issue_command():
         payload = request.get_json(silent=True)

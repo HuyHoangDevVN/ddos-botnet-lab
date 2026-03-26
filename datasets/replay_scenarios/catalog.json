@@ -1,0 +1,24 @@
+{
+  "scenarios": [
+    {
+      "name": "baseline",
+      "focus": "General defensive signal walkthrough",
+      "expected_signals": ["sim_login_failure_burst", "sim_service_latency_spike"]
+    },
+    {
+      "name": "sdn_flow_anomaly",
+      "focus": "Flow-table and path-stability observation",
+      "expected_signals": ["sdn_flow_table_growth", "sdn_controller_queue_delay"]
+    },
+    {
+      "name": "sdn_control_plane_stress",
+      "focus": "Controller capacity and packet-in spike visibility",
+      "expected_signals": ["sdn_control_plane_cpu_rise", "sdn_packet_in_rate_spike"]
+    },
+    {
+      "name": "sdn_recovery_drill",
+      "focus": "Recovery and failover observability",
+      "expected_signals": ["sdn_failover_initiated", "sdn_recovery_complete"]
+    }
+  ]
+}

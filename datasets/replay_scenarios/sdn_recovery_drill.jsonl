@@ -1,0 +1,4 @@
+{"event_type":"sdn_failover_initiated","source":"replay","severity":"medium","old_controller":"ctrl-1","new_controller":"ctrl-2"}
+{"event_type":"sdn_switch_reconnected","source":"replay","severity":"low","switch_id":"sw-core-2","controller":"ctrl-2"}
+{"event_type":"sdn_route_validation_passed","source":"replay","severity":"info","validated_paths":24}
+{"event_type":"sdn_recovery_complete","source":"replay","severity":"info","duration_sec":38}

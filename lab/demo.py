@@ -32,7 +32,14 @@ class DemoRunner:
                 "agent_id": "agent-alpha",
                 "issued_by": "demo",
                 "role": "operator",
-                "args": {"scenario": "baseline"},
+                "args": {"scenario": "sdn_flow_anomaly"},
+            },
+            {
+                "command": "replay_detection_scenario",
+                "agent_id": "agent-alpha",
+                "issued_by": "demo",
+                "role": "operator",
+                "args": {"scenario": "sdn_recovery_drill"},
             },
         ]
         for payload in commands:

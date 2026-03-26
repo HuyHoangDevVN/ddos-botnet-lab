@@ -1,0 +1,4 @@
+{"event_type":"sdn_flow_table_growth","source":"replay","severity":"medium","switch_id":"sw-core-1","flow_count":4100}
+{"event_type":"sdn_controller_queue_delay","source":"replay","severity":"medium","controller":"ctrl-1","queue_ms":180}
+{"event_type":"sdn_path_recompute","source":"replay","severity":"low","path_id":"p-west-east","recompute_reason":"latency_threshold"}
+{"event_type":"sdn_flow_stabilized","source":"replay","severity":"info","switch_id":"sw-core-1","flow_count":2200}

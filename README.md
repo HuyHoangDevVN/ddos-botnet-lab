@@ -45,6 +45,20 @@ It intentionally avoids offensive execution. The system focuses on:
 
 Any other command is rejected.
 
+## SDN Scenario Pack (Safe Replay)
+
+Available replay scenarios:
+
+- `baseline`
+- `sdn_flow_anomaly`
+- `sdn_control_plane_stress`
+- `sdn_recovery_drill`
+
+Query scenarios via API:
+
+- `GET /api/scenarios`
+- `GET /api/scenarios/<scenario_name>`
+
 ## Repository Layout
 
 - `core/`: config, schemas, safety guardrails, types

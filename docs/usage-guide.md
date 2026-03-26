@@ -4,6 +4,10 @@
 
 Endpoint: `POST /api/command`
 
+Scenario discovery endpoints:
+- `GET /api/scenarios`
+- `GET /api/scenarios/<scenario_name>`
+
 Required fields:
 - `command`
 - `agent_id`
@@ -30,3 +34,9 @@ Run:
 - `python lab/demo.py`
 
 This invokes only safe simulation commands and replay dataset scenarios.
+
+## SDN Replay Examples
+
+- `sdn_flow_anomaly`: flow-table growth and queue-delay observations
+- `sdn_control_plane_stress`: controller CPU/API latency/packet-in spike markers
+- `sdn_recovery_drill`: failover and recovery sequence markers

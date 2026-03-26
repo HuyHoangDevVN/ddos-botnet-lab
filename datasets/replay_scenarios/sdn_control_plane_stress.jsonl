@@ -1,0 +1,4 @@
+{"event_type":"sdn_control_plane_cpu_rise","source":"replay","severity":"medium","controller":"ctrl-1","cpu_percent":82}
+{"event_type":"sdn_northbound_api_latency","source":"replay","severity":"medium","endpoint":"/flows","latency_ms":320}
+{"event_type":"sdn_packet_in_rate_spike","source":"replay","severity":"medium","switch_id":"sw-edge-2","packet_in_per_sec":950}
+{"event_type":"sdn_control_plane_recovered","source":"replay","severity":"info","controller":"ctrl-1","cpu_percent":45}
