@@ -1,0 +1,15 @@
+# Configuration Reference
+
+- `SIMULATE_ONLY` (default: `true`, required)
+- `DRY_RUN` (default: `false`)
+- `BIND_HOST` (default: `127.0.0.1`)
+- `ORCHESTRATOR_PORT` (default: `8080`)
+- `TARGET_PORT` (default: `5000`)
+- `ALLOWLISTED_SUBNETS` (default: `127.0.0.0/8`)
+- `MAX_COMMANDS_PER_MINUTE` (default: `60`)
+- `MAX_AGENTS` (default: `25`)
+- `MAX_REPLAY_EVENTS` (default: `500`)
+- `AUDIT_LOG_PATH` (default: `lab_audit.jsonl`)
+- `LAB_KILL_SWITCH` (default: `false`)
+- `RUNTIME_BANNER_REQUIRED` (default: `true`)
+- `LAB_ENV_NAME` (default: `safe-lab`)

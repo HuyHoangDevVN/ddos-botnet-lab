@@ -1,0 +1,3 @@
+{"event_type":"sim_login_failure_burst","source":"replay","severity":"medium","note":"synthetic sequence for detection demo"}
+{"event_type":"sim_service_latency_spike","source":"replay","severity":"low","note":"safe simulator latency marker"}
+{"event_type":"sim_recovery_observed","source":"replay","severity":"info","note":"service recovered in synthetic scenario"}
